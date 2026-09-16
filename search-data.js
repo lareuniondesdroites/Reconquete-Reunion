@@ -65,5 +65,7 @@ window.SITE_INDEX = [
     "type": "Contact",
     "text": "contact presse fédération TV message coordonnées"
   },
-  {title:"Chaîne YouTube officielle Reconquête Réunion",url:"tv.html",type:"Vidéo",text:"Dernières vidéos, directs et archives publiques de Reconquête Réunion sur YouTube."}
+  {title:"Chaîne YouTube officielle Reconquête Réunion",url:"tv.html",type:"Vidéo",text:"Dernières vidéos, directs et archives publiques de Reconquête Réunion sur YouTube."},
+  {title:"Dernières vidéos d’Éric Zemmour et Sarah Knafo",url:"tv.html#national-video",type:"Vidéo nationale",text:"Dernières publications vidéo publiques, Éric Zemmour, Sarah Knafo, YouTube, national."},
+  {title:"Archives des interviews publiques",url:"interviews.html",type:"Médiathèque",text:"Interviews publiques Éric Zemmour Sarah Knafo CNEWS Europe 1 BFMTV vidéos archives dates médias."}
 ];

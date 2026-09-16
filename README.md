@@ -33,3 +33,10 @@ L'intégration utilise la playlist automatique des mises en ligne de la chaîne 
 
 ## Mise à jour programme national
 La page `programme.html` présente les 11 grands axes du programme public national de Reconquête sous forme de résumés attribués, avec lien systématique vers `https://www.parti-reconquete.fr/programme`. Source consultée le 16 septembre 2026.
+
+
+## Version 6 — vidéo nationale et archives d'interviews
+- `tv.html` contient désormais une rubrique « Du national » avec les dernières publications vidéo publiques d'Éric Zemmour et Sarah Knafo.
+- Les lecteurs reposent sur les playlists de mises en ligne YouTube, ce qui permet une mise à jour automatique de la première vidéo affichée.
+- `interviews.html` sert d'archive des interviews publiques avec date, média et source.
+- Pour ajouter un entretien, dupliquer une carte `media-card` dans `interviews.html` et renseigner la date, le média et le lien public.
