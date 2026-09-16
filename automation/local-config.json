@@ -1,0 +1,6 @@
+{
+  "listing_url": "https://fede974.parti-reconquete.fr/articles",
+  "base_url": "https://fede974.parti-reconquete.fr",
+  "output": "local-auto-data.js",
+  "max_items": 200
+}
