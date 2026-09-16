@@ -29,3 +29,7 @@ La page `tv.html` et la section TV de l'accueil intègrent la playlist des derni
 https://www.youtube.com/channel/UCusNNj9ORiV5VKHqMzyIJ_A
 
 L'intégration utilise la playlist automatique des mises en ligne de la chaîne (`UUusNNj9ORiV5VKHqMzyIJ_A`), ce qui permet d'afficher les nouvelles vidéos sans modifier le code du site.
+
+
+## Mise à jour programme national
+La page `programme.html` présente les 11 grands axes du programme public national de Reconquête sous forme de résumés attribués, avec lien systématique vers `https://www.parti-reconquete.fr/programme`. Source consultée le 16 septembre 2026.

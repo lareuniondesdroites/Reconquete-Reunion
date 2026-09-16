@@ -9,7 +9,7 @@ window.SITE_INDEX = [
     "title": "Programme & positions",
     "url": "programme.html",
     "type": "Programme",
-    "text": "positions officielles institutions économie sécurité éducation énergie outre-mer agriculture thèmes source"
+    "text": "programme officiel identité immigration pouvoir achat sécurité justice liberté expression démocratie état campagnes ruralité école travailleurs apprentissage formation emploi industrie numérique écologie énergie source"
   },
   {
     "title": "Actualité nationale",
