@@ -1,0 +1,11 @@
+{
+  "official_channels": [
+    {"channel_id": "UCjTbZBXEw-gplUAnMXLYHpg", "person": "eric", "personLabel": "Éric Zemmour", "label": "Éric Zemmour — chaîne officielle"},
+    {"channel_id": "UC8ba7bn2fuU_lsVweb4YM4Q", "person": "sarah", "personLabel": "Sarah Knafo", "label": "Sarah Knafo — chaîne officielle"},
+    {"channel_id": "UCusNNj9ORiV5VKHqMzyIJ_A", "person": null, "personLabel": "Reconquête Réunion", "label": "Reconquête Réunion — chaîne officielle"}
+  ],
+  "trusted_media_names": ["BFMTV", "LCI", "Europe 1", "CNEWS", "Éric Zemmour", "Sarah Knafo", "Reconquête Réunion - Chaîne Officielle"],
+  "search_people": ["Éric Zemmour", "Sarah Knafo"],
+  "lookback_days": 5,
+  "max_results_per_query": 20
+}
