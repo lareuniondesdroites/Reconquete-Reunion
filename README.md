@@ -1,35 +1,24 @@
-# Reconquête Réunion — site GitHub Pages
+# Reconquête Réunion — Portail v3
 
-## Mise en ligne rapide
+Version structurée comme un portail d'information.
 
-1. Ouvrir le dépôt GitHub `lareuniondesdroites/Reconquete-Reunion`.
-2. Cliquer sur **Add file > Upload files**.
-3. Déposer tous les fichiers et le dossier `assets` contenus dans ce dossier.
-4. Cliquer sur **Commit changes**.
-5. Dans **Settings > Pages**, choisir **Deploy from a branch**, branche **main**, dossier **/(root)**.
-6. Le site sera accessible à l'adresse GitHub Pages du dépôt.
-
-## Fichiers
-
-- `index.html` : accueil
-- `actualites.html` : actualités
-- `tv.html` : Web TV
-- `agenda.html` : événements
-- `dossiers.html` : dossiers thématiques
-- `equipe.html` : équipe
+## Rubriques principales
+- `index.html` : accueil / tableau de bord
+- `decouvrir.html` : présentation et fonctionnement
+- `national.html` : activité publique nationale
+- `reunion.html` : activité de la fédération à La Réunion
+- `tv.html` : Reconquête Réunion TV
+- `programme.html` : programme & positions, avec sources
+- `agenda.html` : agenda National / Réunion
+- `documents.html` : centre de ressources
+- `dossiers.html` : dossiers locaux
+- `equipe.html` : équipe et responsables
+- `faq.html` : questions fréquentes
+- `recherche.html` : moteur de recherche interne
 - `contact.html` : contact
-- `mentions-legales.html` : à compléter
-- `confidentialite.html` : à compléter
-- `style.css` : design
-- `script.js` : menu mobile
-- `assets/` : images
 
-## À personnaliser avant publication publique
+## Mise en ligne GitHub Pages
+Téléverser le contenu de ce dossier à la racine du dépôt `Reconquete-Reunion`, puis committer sur la branche publiée par GitHub Pages.
 
-- textes et titres d'articles ;
-- dates et lieux d'événements ;
-- membres de l'équipe ;
-- liens vers les sources nationales ;
-- lecteur YouTube ;
-- mentions légales et politique de confidentialité ;
-- formulaire de contact.
+## Important avant publication
+Les contenus sont des gabarits. Remplacer les exemples par des informations vérifiées. Pour chaque position politique ou publication nationale, indiquer la nature du contenu, la date et la source officielle.
