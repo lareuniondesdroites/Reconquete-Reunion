@@ -64,5 +64,6 @@ window.SITE_INDEX = [
     "url": "contact.html",
     "type": "Contact",
     "text": "contact presse fédération TV message coordonnées"
-  }
+  },
+  {title:"Chaîne YouTube officielle Reconquête Réunion",url:"tv.html",type:"Vidéo",text:"Dernières vidéos, directs et archives publiques de Reconquête Réunion sur YouTube."}
 ];

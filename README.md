@@ -22,3 +22,10 @@ Téléverser le contenu de ce dossier à la racine du dépôt `Reconquete-Reunio
 
 ## Important avant publication
 Les contenus sont des gabarits. Remplacer les exemples par des informations vérifiées. Pour chaque position politique ou publication nationale, indiquer la nature du contenu, la date et la source officielle.
+
+
+## Chaîne YouTube officielle
+La page `tv.html` et la section TV de l'accueil intègrent la playlist des dernières vidéos de la chaîne officielle :
+https://www.youtube.com/channel/UCusNNj9ORiV5VKHqMzyIJ_A
+
+L'intégration utilise la playlist automatique des mises en ligne de la chaîne (`UUusNNj9ORiV5VKHqMzyIJ_A`), ce qui permet d'afficher les nouvelles vidéos sans modifier le code du site.
