@@ -1,6 +1,6 @@
-# Reconquête Réunion — Portail v3
+# Reconquête Réunion — Portail v8
 
-Version structurée comme un portail d'information.
+Portail statique GitHub Pages : informations publiques nationales et réunionnaises, programme, documents, TV et médiathèque vidéo.
 
 ## Rubriques principales
 - `index.html` : accueil / tableau de bord
@@ -8,48 +8,71 @@ Version structurée comme un portail d'information.
 - `national.html` : activité publique nationale
 - `reunion.html` : activité de la fédération à La Réunion
 - `tv.html` : Reconquête Réunion TV
-- `programme.html` : programme & positions, avec sources
+- `programme.html` : programme & positions avec sources
 - `agenda.html` : agenda National / Réunion
 - `documents.html` : centre de ressources
 - `dossiers.html` : dossiers locaux
-- `equipe.html` : équipe et responsables
-- `faq.html` : questions fréquentes
-- `recherche.html` : moteur de recherche interne
-- `contact.html` : contact
+- `mediatheque.html` : interviews + discours & meetings
+- `equipe.html`, `faq.html`, `recherche.html`, `contact.html`
 
-## Mise en ligne GitHub Pages
-Téléverser le contenu de ce dossier à la racine du dépôt `Reconquete-Reunion`, puis committer sur la branche publiée par GitHub Pages.
+## Chaîne YouTube Reconquête Réunion
+La page `tv.html` et l'accueil intègrent la chaîne :
+`https://www.youtube.com/channel/UCusNNj9ORiV5VKHqMzyIJ_A`
 
-## Important avant publication
-Les contenus sont des gabarits. Remplacer les exemples par des informations vérifiées. Pour chaque position politique ou publication nationale, indiquer la nature du contenu, la date et la source officielle.
+L'intégration utilise la playlist des mises en ligne de la chaîne, donc les nouvelles vidéos de cette chaîne apparaissent automatiquement dans le lecteur.
 
+## Médiathèque V8
+La médiathèque est séparée en deux catégories :
+1. **Interviews publiques**
+2. **Discours & meetings**
 
-## Chaîne YouTube officielle
-La page `tv.html` et la section TV de l'accueil intègrent la playlist des dernières vidéos de la chaîne officielle :
-https://www.youtube.com/channel/UCusNNj9ORiV5VKHqMzyIJ_A
+Filtres disponibles : personnalité, source/média, année, thème, origine manuelle/automatique et recherche libre.
 
-L'intégration utilise la playlist automatique des mises en ligne de la chaîne (`UUusNNj9ORiV5VKHqMzyIJ_A`), ce qui permet d'afficher les nouvelles vidéos sans modifier le code du site.
+Fichiers de données :
+- `interviews-data.js` : archive d'interviews déjà vérifiées ;
+- `discours-data.js` : archive de discours et meetings déjà vérifiés ;
+- `auto-media-data.js` : entrées ajoutées automatiquement.
 
+## Mise à jour automatique quotidienne
+Le workflow `.github/workflows/update-media.yml` lance `automation/update_media.py` chaque jour à **07 h 17, heure de La Réunion**, et peut aussi être lancé manuellement depuis l'onglet **Actions** de GitHub.
 
-## Mise à jour programme national
-La page `programme.html` présente les 11 grands axes du programme public national de Reconquête sous forme de résumés attribués, avec lien systématique vers `https://www.parti-reconquete.fr/programme`. Source consultée le 16 septembre 2026.
+### Niveau 1 — sans aucune clé API
+Le script lit les flux YouTube publics des chaînes officielles configurées dans `automation/config.json` :
+- Éric Zemmour ;
+- Sarah Knafo ;
+- Reconquête Réunion.
 
+Il ajoute uniquement les titres identifiables comme **interview**, **discours** ou **meeting**. Les autres vidéos sont ignorées.
 
-## Version 6 — vidéo nationale et archives d'interviews
-- `tv.html` contient désormais une rubrique « Du national » avec les dernières publications vidéo publiques d'Éric Zemmour et Sarah Knafo.
-- Les lecteurs reposent sur les playlists de mises en ligne YouTube, ce qui permet une mise à jour automatique de la première vidéo affichée.
-- `interviews.html` sert d'archive des interviews publiques avec date, média et source.
-- Pour ajouter un entretien, dupliquer une carte `media-card` dans `interviews.html` et renseigner la date, le média et le lien public.
+### Niveau 2 — recherche élargie dans les médias
+Pour rechercher automatiquement de nouvelles interviews sur YouTube chez BFMTV, LCI, Europe 1, CNEWS, etc. :
 
+1. Créer une clé **YouTube Data API v3** dans Google Cloud.
+2. Dans le dépôt GitHub : **Settings → Secrets and variables → Actions → New repository secret**.
+3. Nom du secret : `YOUTUBE_API_KEY`
+4. Valeur : votre clé API.
+5. Enregistrer.
 
-## Version 7 — médiathèque 2022–2026
+Au prochain passage du workflow, le script recherche les nouvelles vidéos concernant Éric Zemmour et Sarah Knafo, mais ne conserve que les chaînes dont le nom figure dans `trusted_media_names` de `automation/config.json`.
 
-La page `interviews.html` est devenue une médiathèque filtrable :
-- recherche libre ;
-- filtre par personnalité ;
-- filtre par média ;
-- filtre par année ;
-- filtre par thème ;
-- classement chronologique du plus récent au plus ancien.
+> Si le secret `YOUTUBE_API_KEY` n'existe pas, le workflow continue normalement avec les chaînes officielles seulement.
 
-Les données sont séparées dans `interviews-data.js` afin d'ajouter facilement de nouvelles interviews sans modifier la mise en page.
+## Anti-doublons et classement
+Le script compare les identifiants YouTube avec les archives déjà présentes. Une vidéo existante n'est pas ajoutée deux fois. Les résultats sont ensuite classés automatiquement par date dans `mediatheque.html`.
+
+Le classement thématique automatique repose sur des mots-clés (immigration, sécurité, économie, Europe, international, élections, école, agriculture, numérique, institutions). Il peut être corrigé manuellement dans les fichiers de données si nécessaire.
+
+## Modifier les sources surveillées
+Éditer `automation/config.json` :
+- `official_channels` : chaînes surveillées par RSS ;
+- `trusted_media_names` : noms de médias acceptés dans la recherche YouTube ;
+- `search_people` : personnalités recherchées ;
+- `lookback_days` : période de recherche à chaque passage.
+
+## Publication GitHub Pages
+Téléverser tous les fichiers de ce dossier à la racine du dépôt `Reconquete-Reunion`, puis committer sur la branche publiée par GitHub Pages.
+
+Le workflow a besoin de l'autorisation **contents: write**, déjà déclarée dans le fichier YAML, pour committer `auto-media-data.js` lorsqu'une nouvelle vidéo est détectée. Sur un dépôt public inactif pendant 60 jours, GitHub peut désactiver automatiquement les workflows planifiés ; il suffit alors de les réactiver dans l'onglet Actions.
+
+## Important
+Le site est un portail politique identifié. Les résumés, positions et contenus doivent rester attribués à leurs sources publiques. Pour les archives vidéo, conserver la date, le média ou la chaîne, et le lien vers la publication d'origine.

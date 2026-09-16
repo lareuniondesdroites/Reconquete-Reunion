@@ -67,5 +67,7 @@ window.SITE_INDEX = [
   },
   {title:"Chaîne YouTube officielle Reconquête Réunion",url:"tv.html",type:"Vidéo",text:"Dernières vidéos, directs et archives publiques de Reconquête Réunion sur YouTube."},
   {title:"Dernières vidéos d’Éric Zemmour et Sarah Knafo",url:"tv.html#national-video",type:"Vidéo nationale",text:"Dernières publications vidéo publiques, Éric Zemmour, Sarah Knafo, YouTube, national."},
-  {title:"Médiathèque des interviews 2022–2026",url:"interviews.html",type:"Médiathèque",text:"Interviews publiques Éric Zemmour Sarah Knafo Europe 1 CNEWS BFMTV LCI vidéos archives années 2022 2023 2024 2025 2026 thèmes immigration économie sécurité justice Europe international élections école numérique agriculture travail."}
+  {title:"Médiathèque vidéos",url:"mediatheque.html",type:"Médiathèque",text:"Interviews publiques discours meetings Éric Zemmour Sarah Knafo Europe 1 CNEWS BFMTV LCI vidéos archives années 2022 2023 2024 2025 2026 thèmes immigration économie sécurité justice Europe international élections école numérique agriculture travail."}
+,
+  {title:"Discours & meetings",url:"mediatheque.html?type=speech",type:"Médiathèque",text:"Discours meetings prises de parole rentrée politique université été événements publics chronologie vidéo."}
 ];
