@@ -1,78 +1,71 @@
-# Reconquête Réunion — Portail v8
+# Reconquête Réunion — Portail V9
 
-Portail statique GitHub Pages : informations publiques nationales et réunionnaises, programme, documents, TV et médiathèque vidéo.
+Cette version conserve la partie **National** dans son état V8 et développe la partie **La Réunion**.
 
-## Rubriques principales
-- `index.html` : accueil / tableau de bord
-- `decouvrir.html` : présentation et fonctionnement
-- `national.html` : activité publique nationale
-- `reunion.html` : activité de la fédération à La Réunion
-- `tv.html` : Reconquête Réunion TV
-- `programme.html` : programme & positions avec sources
-- `agenda.html` : agenda National / Réunion
-- `documents.html` : centre de ressources
-- `dossiers.html` : dossiers locaux
-- `mediatheque.html` : interviews + discours & meetings
-- `equipe.html`, `faq.html`, `recherche.html`, `contact.html`
+## Ce qui est nouveau en V9
 
-## Chaîne YouTube Reconquête Réunion
-La page `tv.html` et l'accueil intègrent la chaîne :
-`https://www.youtube.com/channel/UCusNNj9ORiV5VKHqMzyIJ_A`
+- `reunion.html` : nouveau tableau de bord local.
+- `reunion-actualites.html` : archive locale avec recherche et filtres.
+- `reunion-communiques.html` : archive séparée des communiqués de la fédération.
+- `reunion-agenda.html` : agenda local.
+- `reunion-terrain.html` : activité de proximité par zones Nord, Est, Sud, Ouest.
+- `local-auto-data.js` : publications publiques récupérées depuis le site officiel de la fédération.
+- `local-manual-data.js` : événements et comptes rendus ajoutés manuellement par l’équipe locale.
+- `local.js` : moteur d’affichage local.
+- `automation/update_local.py` : récupération automatique des articles et communiqués publics.
+- `.github/workflows/update-local.yml` : lancement quotidien de la mise à jour locale.
 
-L'intégration utilise la playlist des mises en ligne de la chaîne, donc les nouvelles vidéos de cette chaîne apparaissent automatiquement dans le lecteur.
+## National en standby
 
-## Médiathèque V8
-La médiathèque est séparée en deux catégories :
-1. **Interviews publiques**
-2. **Discours & meetings**
+Les fichiers `national.html` et `programme.html` n’ont pas été modifiés pour la V9.
+Le workflow vidéo V8 est conservé.
 
-Filtres disponibles : personnalité, source/média, année, thème, origine manuelle/automatique et recherche libre.
+## Mise à jour automatique locale
 
-Fichiers de données :
-- `interviews-data.js` : archive d'interviews déjà vérifiées ;
-- `discours-data.js` : archive de discours et meetings déjà vérifiés ;
-- `auto-media-data.js` : entrées ajoutées automatiquement.
+Le workflow **Mise a jour actualites Reunion** s’exécute tous les jours vers 07:37 à La Réunion (03:37 UTC) et peut aussi être lancé manuellement depuis l’onglet **Actions**.
 
-## Mise à jour automatique quotidienne
-Le workflow `.github/workflows/update-media.yml` lance `automation/update_media.py` chaque jour à **07 h 17, heure de La Réunion**, et peut aussi être lancé manuellement depuis l'onglet **Actions** de GitHub.
+Il consulte :
 
-### Niveau 1 — sans aucune clé API
-Le script lit les flux YouTube publics des chaînes officielles configurées dans `automation/config.json` :
-- Éric Zemmour ;
-- Sarah Knafo ;
-- Reconquête Réunion.
+`https://fede974.parti-reconquete.fr/articles`
 
-Il ajoute uniquement les titres identifiables comme **interview**, **discours** ou **meeting**. Les autres vidéos sont ignorées.
+Il repère les liens publics contenant `/article/` et `/communique-de-presse/`, les classe puis met à jour `local-auto-data.js`.
 
-### Niveau 2 — recherche élargie dans les médias
-Pour rechercher automatiquement de nouvelles interviews sur YouTube chez BFMTV, LCI, Europe 1, CNEWS, etc. :
+Le script n’écrase pas volontairement les anciennes entrées : il fusionne les liens déjà archivés avec les nouveaux.
 
-1. Créer une clé **YouTube Data API v3** dans Google Cloud.
-2. Dans le dépôt GitHub : **Settings → Secrets and variables → Actions → New repository secret**.
-3. Nom du secret : `YOUTUBE_API_KEY`
-4. Valeur : votre clé API.
-5. Enregistrer.
+## Ajouter un événement local
 
-Au prochain passage du workflow, le script recherche les nouvelles vidéos concernant Éric Zemmour et Sarah Knafo, mais ne conserve que les chaînes dont le nom figure dans `trusted_media_names` de `automation/config.json`.
+Modifier `local-manual-data.js` et ajouter une entrée de type `evenement` :
 
-> Si le secret `YOUTUBE_API_KEY` n'existe pas, le workflow continue normalement avec les chaînes officielles seulement.
+```js
+{
+  "date": "2026-10-11",
+  "type": "evenement",
+  "title": "Nom de l'événement",
+  "url": "",
+  "source": "Reconquête Réunion",
+  "sourceKind": "Agenda local",
+  "zone": "Ouest",
+  "commune": "Le Port",
+  "time": "",
+  "themes": ["Vie de la fédération"],
+  "excerpt": "Informations pratiques.",
+  "auto": false
+}
+```
 
-## Anti-doublons et classement
-Le script compare les identifiants YouTube avec les archives déjà présentes. Une vidéo existante n'est pas ajoutée deux fois. Les résultats sont ensuite classés automatiquement par date dans `mediatheque.html`.
+## Ajouter un compte rendu terrain
 
-Le classement thématique automatique repose sur des mots-clés (immigration, sécurité, économie, Europe, international, élections, école, agriculture, numérique, institutions). Il peut être corrigé manuellement dans les fichiers de données si nécessaire.
+Même principe, avec `"type": "terrain"` et une zone parmi :
 
-## Modifier les sources surveillées
-Éditer `automation/config.json` :
-- `official_channels` : chaînes surveillées par RSS ;
-- `trusted_media_names` : noms de médias acceptés dans la recherche YouTube ;
-- `search_people` : personnalités recherchées ;
-- `lookback_days` : période de recherche à chaque passage.
+- `Nord`
+- `Est`
+- `Sud`
+- `Ouest`
 
-## Publication GitHub Pages
-Téléverser tous les fichiers de ce dossier à la racine du dépôt `Reconquete-Reunion`, puis committer sur la branche publiée par GitHub Pages.
+## Déploiement
 
-Le workflow a besoin de l'autorisation **contents: write**, déjà déclarée dans le fichier YAML, pour committer `auto-media-data.js` lorsqu'une nouvelle vidéo est détectée. Sur un dépôt public inactif pendant 60 jours, GitHub peut désactiver automatiquement les workflows planifiés ; il suffit alors de les réactiver dans l'onglet Actions.
+Le site reste compatible GitHub Pages. Après envoi des fichiers sur la branche `main`, GitHub Pages republie automatiquement le site.
 
 ## Important
-Le site est un portail politique identifié. Les résumés, positions et contenus doivent rester attribués à leurs sources publiques. Pour les archives vidéo, conserver la date, le média ou la chaîne, et le lien vers la publication d'origine.
+
+Les articles et communiqués repris sont des publications politiques du mouvement : le portail les identifie comme telles et renvoie vers les sources officielles. Les données factuelles ajoutées dans les dossiers locaux doivent être sourcées séparément.

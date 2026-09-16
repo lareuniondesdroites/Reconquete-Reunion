@@ -70,4 +70,9 @@ window.SITE_INDEX = [
   {title:"Médiathèque vidéos",url:"mediatheque.html",type:"Médiathèque",text:"Interviews publiques discours meetings Éric Zemmour Sarah Knafo Europe 1 CNEWS BFMTV LCI vidéos archives années 2022 2023 2024 2025 2026 thèmes immigration économie sécurité justice Europe international élections école numérique agriculture travail."}
 ,
   {title:"Discours & meetings",url:"mediatheque.html?type=speech",type:"Médiathèque",text:"Discours meetings prises de parole rentrée politique université été événements publics chronologie vidéo."}
+  ,{title:"Actualités locales Réunion",url:"reunion-actualites.html",type:"Réunion",text:"actualités locales fédération communiqués événements terrain Nord Est Sud Ouest archive source officielle"}
+  ,{title:"Communiqués Reconquête Réunion",url:"reunion-communiques.html",type:"Réunion",text:"communiqués presse positions locales fédération Réunion archive"}
+  ,{title:"Agenda Reconquête Réunion",url:"reunion-agenda.html",type:"Réunion",text:"agenda local événements réunions rencontres permanences Réunion"}
+  ,{title:"Sur le terrain à La Réunion",url:"reunion-terrain.html",type:"Réunion",text:"terrain proximité Nord Est Sud Ouest Saint-Denis Saint-Pierre Saint-Paul Saint-André"}
+
 ];
