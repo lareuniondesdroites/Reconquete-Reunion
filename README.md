@@ -40,3 +40,16 @@ La page `programme.html` présente les 11 grands axes du programme public nation
 - Les lecteurs reposent sur les playlists de mises en ligne YouTube, ce qui permet une mise à jour automatique de la première vidéo affichée.
 - `interviews.html` sert d'archive des interviews publiques avec date, média et source.
 - Pour ajouter un entretien, dupliquer une carte `media-card` dans `interviews.html` et renseigner la date, le média et le lien public.
+
+
+## Version 7 — médiathèque 2022–2026
+
+La page `interviews.html` est devenue une médiathèque filtrable :
+- recherche libre ;
+- filtre par personnalité ;
+- filtre par média ;
+- filtre par année ;
+- filtre par thème ;
+- classement chronologique du plus récent au plus ancien.
+
+Les données sont séparées dans `interviews-data.js` afin d'ajouter facilement de nouvelles interviews sans modifier la mise en page.
