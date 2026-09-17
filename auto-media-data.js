@@ -7,7 +7,9 @@ window.AUTO_MEDIA_ARCHIVE = [
     "personLabel": "Éric Zemmour",
     "media": "Éric Zemmour — chaîne officielle",
     "title": "Grand meeting de rentrée d'Eric Zemmour à Port-Marly",
-    "themes": ["Actualité"],
+    "themes": [
+      "Actualité"
+    ],
     "url": "https://www.youtube.com/watch?v=UWN4pJLWk1Y",
     "video": "UWN4pJLWk1Y",
     "sourceKind": "Chaîne officielle",
@@ -20,7 +22,9 @@ window.AUTO_MEDIA_ARCHIVE = [
     "personLabel": "Sarah Knafo",
     "media": "Sarah Knafo — chaîne officielle",
     "title": "Sarah Knafo à Port-Marly : Mon discours de rentrée",
-    "themes": ["Actualité"],
+    "themes": [
+      "Actualité"
+    ],
     "url": "https://www.youtube.com/watch?v=zOUJfLxX1xg",
     "video": "zOUJfLxX1xg",
     "sourceKind": "Chaîne officielle",
