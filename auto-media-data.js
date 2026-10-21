@@ -1,6 +1,21 @@
 // Mis à jour automatiquement par .github/workflows/update-media.yml
 window.AUTO_MEDIA_ARCHIVE = [
   {
+    "date": "2026-10-20",
+    "type": "interview",
+    "person": "eric",
+    "personLabel": "Éric Zemmour",
+    "media": "Eric Zemmour le meilleur ",
+    "title": "Eric zemmour L&#39;interview intégrale d&#39;Éric Zemmour, président du parti Reconquête",
+    "themes": [
+      "Actualité"
+    ],
+    "url": "https://www.youtube.com/watch?v=aVPK2QntbLA",
+    "video": "aVPK2QntbLA",
+    "sourceKind": "Média public",
+    "auto": true
+  },
+  {
     "date": "2026-09-13",
     "type": "meeting",
     "person": "eric",
