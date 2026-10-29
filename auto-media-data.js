@@ -1,6 +1,21 @@
 // Mis à jour automatiquement par .github/workflows/update-media.yml
 window.AUTO_MEDIA_ARCHIVE = [
   {
+    "date": "2026-10-28",
+    "type": "interview",
+    "person": "sarah",
+    "personLabel": "Sarah Knafo",
+    "media": "Sarah Knafo — chaîne officielle",
+    "title": "Je sors d’une interview lunaire sur France Info.",
+    "themes": [
+      "Actualité"
+    ],
+    "url": "https://www.youtube.com/watch?v=5n9f-nDVWBE",
+    "video": "5n9f-nDVWBE",
+    "sourceKind": "Chaîne officielle",
+    "auto": true
+  },
+  {
     "date": "2026-10-20",
     "type": "interview",
     "person": "eric",
