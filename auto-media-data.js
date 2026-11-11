@@ -1,6 +1,21 @@
 // Mis à jour automatiquement par .github/workflows/update-media.yml
 window.AUTO_MEDIA_ARCHIVE = [
   {
+    "date": "2026-11-10",
+    "type": "meeting",
+    "person": "eric",
+    "personLabel": "Éric Zemmour",
+    "media": "Éric Zemmour — chaîne officielle",
+    "title": "Je vous invite à me rejoindre le 21 novembre pour mon meeting de lancement de campagne à Toulon.",
+    "themes": [
+      "Actualité"
+    ],
+    "url": "https://www.youtube.com/watch?v=FUf35Ya66jo",
+    "video": "FUf35Ya66jo",
+    "sourceKind": "Chaîne officielle",
+    "auto": true
+  },
+  {
     "date": "2026-10-28",
     "type": "interview",
     "person": "sarah",
