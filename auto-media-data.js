@@ -1,6 +1,21 @@
 // Mis à jour automatiquement par .github/workflows/update-media.yml
 window.AUTO_MEDIA_ARCHIVE = [
   {
+    "date": "2026-11-12",
+    "type": "meeting",
+    "person": "eric",
+    "personLabel": "Éric Zemmour",
+    "media": "Sarah Knafo",
+    "title": "Je vous donne aussi rendez-vous, le 21 novembre à Toulon, pour le premier meeting d’Eric Zemmour.",
+    "themes": [
+      "Actualité"
+    ],
+    "url": "https://www.youtube.com/watch?v=LwShULycTmo",
+    "video": "LwShULycTmo",
+    "sourceKind": "Média public",
+    "auto": true
+  },
+  {
     "date": "2026-11-10",
     "type": "meeting",
     "person": "eric",
