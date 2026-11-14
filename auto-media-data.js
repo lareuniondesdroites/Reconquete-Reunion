@@ -5,14 +5,14 @@ window.AUTO_MEDIA_ARCHIVE = [
     "type": "meeting",
     "person": "eric",
     "personLabel": "Éric Zemmour",
-    "media": "Sarah Knafo",
+    "media": "Sarah Knafo — chaîne officielle",
     "title": "Je vous donne aussi rendez-vous, le 21 novembre à Toulon, pour le premier meeting d’Eric Zemmour.",
     "themes": [
       "Actualité"
     ],
     "url": "https://www.youtube.com/watch?v=LwShULycTmo",
     "video": "LwShULycTmo",
-    "sourceKind": "Média public",
+    "sourceKind": "Chaîne officielle",
     "auto": true
   },
   {
