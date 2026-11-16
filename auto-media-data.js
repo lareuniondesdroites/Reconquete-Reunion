@@ -1,6 +1,21 @@
 // Mis à jour automatiquement par .github/workflows/update-media.yml
 window.AUTO_MEDIA_ARCHIVE = [
   {
+    "date": "2026-11-15",
+    "type": "discours",
+    "person": "eric",
+    "personLabel": "Éric Zemmour",
+    "media": "Eric Zemmour le meilleur ",
+    "title": "Eric zemmour Le discours de rentrée du fondateur du parti Reconquête Éric Zemmour",
+    "themes": [
+      "Actualité"
+    ],
+    "url": "https://www.youtube.com/watch?v=LgS8WxEqjNM",
+    "video": "LgS8WxEqjNM",
+    "sourceKind": "Média public",
+    "auto": true
+  },
+  {
     "date": "2026-11-12",
     "type": "meeting",
     "person": "eric",
